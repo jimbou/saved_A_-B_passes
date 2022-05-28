@@ -6,7 +6,7 @@ target triple = "x86_64-pc-linux-gnu"
 @.str = private unnamed_addr constant [13 x i8] c"hello world\0A\00", align 1
 @.str.1 = private unnamed_addr constant [3 x i8] c"%d\00", align 1
 @.str.2 = private unnamed_addr constant [15 x i8] c"hello world_2\0A\00", align 1
-@.str.3 = private unnamed_addr constant [4 x i8] c"%s\0A\00", align 1
+@.str.3 = private unnamed_addr constant [18 x i8] c"Basic Block : %s\0A\00", align 1
 
 ; Function Attrs: noinline nounwind uwtable
 define dso_local void @hello() #0 {
@@ -45,7 +45,7 @@ define dso_local void @print(i8* %0) #0 {
   %2 = alloca i8*, align 8
   store i8* %0, i8** %2, align 8
   %3 = load i8*, i8** %2, align 8
-  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.3, i64 0, i64 0), i8* %3)
+  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.3, i64 0, i64 0), i8* %3)
   ret void
 }
 
